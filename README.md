@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## ⚡ Features
 
-## Getting Started
+### 🛠️ Core Technologies:
 
-First, run the development server:
+- 🚀 Next.js 16 App Router for server-side rendering, routing, and API endpoints with Server Components
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ⚛️ React 19 for building interactive user interfaces with reusable components
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🔑 Clerk for secure authentication with Passkeys, Github, and Google Sign-in
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🎨 ShadcN UI for accessible, customizable React components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 💾 NeonDB (PostgreSQL) for serverless database storage of products and user data
 
-## Learn More
+- 🗄️ Drizzle ORM for type-safe database queries and migrations
 
-To learn more about Next.js, take a look at the following resources:
+- 📜 TypeScript for static typing and enhanced development experience
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 💅 TailwindCSS 4 for utility-first, responsive styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ✅ Zod for schema validation and form handling
 
-## Deploy on Vercel
+- 🎯 React Hook Form for efficient form management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 💫 Application Features:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 📝 Product submission with validation and moderation
+
+- 🎨 Beautiful, interactive product cards and layouts
+
+- 🔒 Secure file handling and processing
+
+- 🔐 Protected routes and API endpoints
+
+- 👨‍💼 Admin panel for product management and moderation
+
+- 📊 Featured products and recently launched sections
+
+- 📱 Responsive design for mobile and desktop
+
+- 🔄 Real-time updates and path revalidation
+
+- 🚀 Production-ready deployment
+
+- 🔔 Toast notifications for submission status, updates, and error handling
+
+- 📈 Performance optimizations
+
+- 🔍 SEO-friendly product pages
+
+- 🗳️ Voting system for community engagement
+
+- 🏷️ Tag-based product categorization
