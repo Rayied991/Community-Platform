@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+// const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
-const inter=Inter({subsets: ["latin"]});
+const outfit=Outfit({subsets: ["latin"], variable:"--font-outfit"});
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -17,8 +16,8 @@ const inter=Inter({subsets: ["latin"]});
 // });
 
 export const metadata: Metadata = {
-  title: "Craftwave",
-  description: "Craftwave is a platform for building and sharing your own projects with the world.",
+  title: "Craftwave - Share Your Creations, Discover New Launches ",
+  description: " community platform for creators to showcase their apps, AI tools, SaaS products, and creative projects. Authentic launches, real builders, genuine feedback.",
 };
 
 export default function RootLayout({
@@ -27,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en">
       <body
-        className={`${inter.className} antialiased`}
+        className={`${outfit.className} antialiased`}
       >
 
         <header>Craftwave</header>
