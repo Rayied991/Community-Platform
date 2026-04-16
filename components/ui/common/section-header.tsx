@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react"
+import { LucideIcon } from "lucide-react";
 
 const SectionHeader = ({title,icon:Icon,description}:{title:string,icon:LucideIcon,description:string}) => {
   return (
@@ -12,4 +12,4 @@ const SectionHeader = ({title,icon:Icon,description}:{title:string,icon:LucideIc
   )
 }
 
-export default SectionHeader
+export default SectionHeader;

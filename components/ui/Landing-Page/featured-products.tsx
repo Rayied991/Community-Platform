@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRightIcon, StarIcon } from "lucide-react";
 import Link from "next/link";
 import SectionHeader from "../common/section-header";
+import ProductCard from "../products/product-card";
 const featureProducts=[
   {
     id:1,
