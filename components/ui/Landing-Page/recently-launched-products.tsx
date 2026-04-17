@@ -5,22 +5,22 @@ import ProductCard from "../products/product-card";
 
 const RecentlyLaunchedProducts = () => {
     const recentlylaunchedProducts=[
-//   {
-//     id:1,
-//     name:"ParityKit",
-//     description:"A toolkit for creating parity products",
-//     tags:["Saas","Pricing","Global"],
-//     votes:615,
-//     isFeatured:true
-//   },
-//   {
-//     id:2,
-//     name:"Modern Full Stack Nextjs Course",
-//     description:"Learn to build production-ready full stack apps with Next.js",
-//     tags:["Next.js","FullStack","Course"],
-//     votes:124,
-//     isFeatured:false
-//   }
+  {
+    id:1,
+    name:"ParityKit",
+    description:"A toolkit for creating parity products",
+    tags:["Saas","Pricing","Global"],
+    votes:615,
+    isFeatured:true
+  },
+  {
+    id:2,
+    name:"Modern Full Stack Nextjs Course",
+    description:"Learn to build production-ready full stack apps with Next.js",
+    tags:["Next.js","FullStack","Course"],
+    votes:124,
+    isFeatured:false
+  }
 ]
   return (
     <section className="py-20">

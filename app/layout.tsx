@@ -1,3 +1,5 @@
+import Footer from "@/components/ui/common/footer";
+import Header from "@/components/ui/common/header";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
@@ -30,10 +32,11 @@ export default function RootLayout({
       <body
         className={`${outfit.className} antialiased`}
       >
-
-        <header>Craftwave</header>
+        <Header/>
+        {/* <header>Craftwave</header> */}
         {children}
-        <footer>Craftwave</footer>
+        {/* <footer>Craftwave</footer> */}
+        <Footer/>
       </body>
     </html>
   );
