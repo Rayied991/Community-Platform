@@ -1,17 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { products } from "@/db/schema";
 import { cn } from "@/lib/utils";
+import { InferSelectModel } from "drizzle-orm";
 import { ChevronDownIcon, ChevronUpIcon, StarIcon } from "lucide-react";
 import Link from "next/link";
-interface Product{
-    id:number;
-    name:string;
-    description: string;
-    tags:string[];
-    votes:number;
-    isFeatured: boolean;
-}
+type Product=InferSelectModel<typeof products>;
 const ProductCard = ({product}:{product:Product}) => {
     const hasVoted=false;
   return (
@@ -27,7 +22,7 @@ const ProductCard = ({product}:{product:Product}) => {
                     
                 <CardTitle className="text-lg group-hover:text-primary transition-colors">{product.name}</CardTitle>
                 {
-                    product.isFeatured && ( <Badge className="gap-1 bg-primary text-primary-foreground"> <StarIcon className="size-3 fill-current"/> Featured</Badge>
+                    product.voteCount> 100 && ( <Badge className="gap-1 bg-primary text-primary-foreground"> <StarIcon className="size-3 fill-current"/> Featured</Badge>
                 )}
                 
                 </div>
@@ -39,7 +34,7 @@ const ProductCard = ({product}:{product:Product}) => {
                     <Button variant={"ghost"} size={"icon-sm"} className={cn("h-8 w-8 text-primary ", hasVoted? "bg-primary/10 text-primary hover:bg-primary/20":"hover:bg-primary/10 hover:text-primary")}>
                     <ChevronUpIcon className="size-5"/>
                     </Button>
-                    <span className="text-sm font-semibold transition-colors text-foreground">10</span>
+                    <span className="text-sm font-semibold transition-colors text-foreground">{product.voteCount}</span>
                      <Button variant={"ghost"} size={"icon-sm"} className={cn("h-8 w-8 text-primary ",hasVoted? "hover:text-destructive" : "opacity-50 cursor-not-allowed" )}>
                     <ChevronDownIcon className="size-5"/>
                     </Button>
@@ -52,7 +47,6 @@ const ProductCard = ({product}:{product:Product}) => {
                 <div className="flex items-center gap-2">
                     {product.tags?.map((tag)=>(
                     <Badge variant={"secondary"} key={tag}>{tag}</Badge>
-                      
                       ))}
 
                 </div>
