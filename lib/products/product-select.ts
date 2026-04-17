@@ -11,3 +11,16 @@ export async function getFeaturedProducts(){
 
     return ProductsData;
 }
+
+export async function getRecentlyLaunchedProducts() {
+//   await connection();
+  const productsData = await getFeaturedProducts();
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+  return productsData.filter(
+    (product) =>
+      product.createdAt &&
+      new Date(product.createdAt.toISOString()) >= oneWeekAgo
+  );
+}
