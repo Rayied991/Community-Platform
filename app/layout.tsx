@@ -1,9 +1,9 @@
 import Footer from "@/components/ui/common/footer";
 import Header from "@/components/ui/common/header";
+import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-
 // const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const outfit=Outfit({subsets: ["latin"], variable:"--font-outfit"});
@@ -28,10 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+     <ClerkProvider>
+
     <html lang="en">
       <body
-        className={`${outfit.className} antialiased`}
-      >
+        className={`${outfit.className} antialiased`}>
+
         <Header/>
         {/* <header>Craftwave</header> */}
         {children}
@@ -39,5 +41,6 @@ export default function RootLayout({
         <Footer/>
       </body>
     </html>
+</ClerkProvider>
   );
 }
