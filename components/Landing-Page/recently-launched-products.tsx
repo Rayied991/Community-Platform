@@ -1,8 +1,8 @@
+import EmptyState from "@/components/common/empty-state";
+import SectionHeader from "@/components/common/section-header";
+import ProductCard from "@/components/products/product-card";
 import { getRecentlyLaunchedProducts } from "@/lib/products/product-select";
 import { CalendarIcon, RocketIcon } from "lucide-react";
-import EmptyState from "../common/empty-state";
-import SectionHeader from "../common/section-header";
-import ProductCard from "../products/product-card";
 
 const RecentlyLaunchedProducts = async() => {
     const recentlylaunchedProducts=await getRecentlyLaunchedProducts();

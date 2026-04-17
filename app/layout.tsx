@@ -1,5 +1,5 @@
-import Footer from "@/components/ui/common/footer";
-import Header from "@/components/ui/common/header";
+import Footer from "@/components/common/footer";
+import Header from "@/components/common/header";
 import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";

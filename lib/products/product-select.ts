@@ -1,8 +1,10 @@
 import { db } from "@/db";
 import { products } from "@/db/schema";
 import { desc, eq } from "drizzle-orm";
+import { connection } from "next/server";
 
 export async function getFeaturedProducts(){
+  "use cache";
     const ProductsData=await db
     .select()
     .from(products)
@@ -12,9 +14,19 @@ export async function getFeaturedProducts(){
     return ProductsData;
 }
 
+export async function getAllProducts() {
+  const productsData = await db
+    .select()
+    .from(products)
+    .orderBy(desc(products.voteCount));
+
+  return productsData;
+}
+
 export async function getRecentlyLaunchedProducts() {
-//   await connection();
-  const productsData = await getFeaturedProducts();
+  await connection();
+  // await new Promise((resolve)=>setTimeout(resolve,3000));
+  const productsData = await getAllProducts();
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
