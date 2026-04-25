@@ -3,18 +3,29 @@ import { products } from "@/db/schema";
 import { desc, eq } from "drizzle-orm";
 import { connection } from "next/server";
 
-export async function getFeaturedProducts(){
+export async function getFeaturedProducts() {
   "use cache";
-    const ProductsData=await db
+  const productsData = await db
     .select()
     .from(products)
-    .where(eq(products.status,"approved"))
+    .where(eq(products.status, "approved"))
     .orderBy(desc(products.voteCount));
 
-    return ProductsData;
+  return productsData;
+}
+
+export async function getAllApprovedProducts() {
+  const productsData = await db
+    .select()
+    .from(products)
+    .where(eq(products.status, "approved"))
+    .orderBy(desc(products.voteCount));
+
+  return productsData;
 }
 
 export async function getAllProducts() {
+  "use cache";
   const productsData = await db
     .select()
     .from(products)
@@ -25,8 +36,7 @@ export async function getAllProducts() {
 
 export async function getRecentlyLaunchedProducts() {
   await connection();
-  // await new Promise((resolve)=>setTimeout(resolve,3000));
-  const productsData = await getAllProducts();
+  const productsData = await getAllApprovedProducts();
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
@@ -37,11 +47,12 @@ export async function getRecentlyLaunchedProducts() {
   );
 }
 
-export async function getProductBySlug(slug:string){
-  const product =await db
-  .select()
-  .from(products)
-  .where(eq(products.slug,slug));
+export async function getProductBySlug(slug: string) {
+  const product = await db
+    .select()
+    .from(products)
+    .where(eq(products.slug, slug))
+    .limit(1);
 
   return product?.[0] ?? null;
 }

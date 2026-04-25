@@ -1,12 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { products } from "@/db/schema";
-import { InferSelectModel } from "drizzle-orm";
+import { ProductType } from "@/types";
 import { StarIcon } from "lucide-react";
 import Link from "next/link";
 import VotingButtons from "./voting-buttons";
-type Product=InferSelectModel<typeof products>;
-const ProductCard = ({product}:{product:Product}) => {
+const ProductCard = ({product}:{product:ProductType}) => {
     const hasVoted=false;
   return (
     <Link href={`/products/${product.slug}`}>
