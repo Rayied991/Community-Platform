@@ -1,3 +1,4 @@
+import AdminProductCard from "@/components/admin/admin-product-card";
 import StatsCard from "@/components/admin/stats-card";
 import SectionHeader from "@/components/common/section-header";
 import { getAllProducts } from "@/lib/products/product-select";
@@ -45,6 +46,34 @@ const AdminPage = async() => {
         pending={pendingProducts.length}
         rejected={rejectedProducts.length}
         />
+
+        <section className="my-12">
+          <div className="section-header-with-count">
+            <h2 className="text-2xl font-bold">Pending Products ({pendingProducts.length})</h2>
+          </div>
+
+          <div className="space-y-4">
+            {
+              pendingProducts.map((product)=>(
+                <AdminProductCard key={product.id} product={product} />
+              ))
+            }
+          </div>
+        </section>
+
+         <section className="my-12">
+          <div className="section-header-with-count">
+            <h2 className="text-2xl font-bold">All Products ({allProducts.length})</h2>
+          </div>
+
+          <div className="space-y-4">
+            {
+              allProducts.map((product)=>(
+                <AdminProductCard key={product.id} product={product} />
+              ))
+            }
+          </div>
+        </section>
         </div>
       </div>
   )
