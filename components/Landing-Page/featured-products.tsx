@@ -5,24 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getFeaturedProducts } from "@/lib/products/product-select";
 import { ArrowUpRightIcon, StarIcon } from "lucide-react";
 import Link from "next/link";
-// const featureProducts=[
-//   {
-//     id:1,
-//     name:"ParityKit",
-//     description:"A toolkit for creating parity products",
-//     tags:["Saas","Pricing","Global"],
-//     votes:615,
-//     isFeatured:true
-//   },
-//   {
-//     id:2,
-//     name:"Modern Full Stack Nextjs Course",
-//     description:"Learn to build production-ready full stack apps with Next.js",
-//     tags:["Next.js","FullStack","Course"],
-//     votes:124,
-//     isFeatured:false
-//   }
-// ]
+
 
 const FeaturedProducts = async() => {
   const featureProducts=await getFeaturedProducts();

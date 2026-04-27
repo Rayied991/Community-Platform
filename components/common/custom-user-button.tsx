@@ -29,7 +29,7 @@ export default function CustomUserButton() {
       <UserButton.UserProfilePage
         label="Admin"
         labelIcon={<Building2Icon className="size-4" />}
-        url="admin"
+         url="admin"
       >
         <div className="p-4">
           <h2>Admin Panel</h2>
